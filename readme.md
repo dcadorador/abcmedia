@@ -8,7 +8,7 @@ while trying to use as much functionality from Laravel and VueJs.
 #Software
 ```
 Front End - VueJs
-Back End - Laravel Api
+Back End - Laravel Api 5.8
 PHP - v7.4
 MySQL - v5.7
 Node - v14.12
@@ -35,6 +35,12 @@ $ php artisan migrate
 - Run database seeder
 ```
 $ php artisan db:seed
+```
+
+- Generate application keys
+```
+$ php artisan key:generate
+$ php artisan jwt:secret
 ```
 
 - Run NPM install
