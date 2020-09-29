@@ -109,8 +109,8 @@ APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:uITjejaBolbo53IoMucISkkVHx+HNXDx7hw/aRozPec=
 APP_DEBUG=true
-APP_URL=http://localhost/
-MIX_APP_URL=http://localhost:8000
+APP_URL=http://127.0.0.1/
+MIX_APP_URL=http://127.0.0.1:8000
 
 LOG_CHANNEL=stack
 
