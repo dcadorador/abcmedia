@@ -9,6 +9,9 @@ while trying to use as much functionality from Laravel and VueJs.
 ```
 Front End - VueJs
 Back End - Laravel Api
+PHP - v7.4
+MySQL - v5.7
+Node - v14.12
 ```
 
 #Installation
@@ -79,8 +82,8 @@ passwd: password
 
 # Application Functionality
 ```
- 1. Login
-        - simple login using email and password
+ 1. Login / Registration
+        - simple login using email and password, also with the basic registration
 
  2. Add New Application Accounts 
         - application will auto-generate a key and logs for the application in the back-end
