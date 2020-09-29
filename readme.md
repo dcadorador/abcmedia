@@ -103,7 +103,7 @@ passwd: password
 ```
 
 # ENV FILE SAMPLE
-- Please take note that APP_URL and MIX_APP_URL are important for the VueJS to read the API properly
+- Please take note that APP_URL and MIX_APP_URL are important for the VueJS to read the API properly, change these values accordingly to your setup
 ```
 APP_NAME=Laravel
 APP_ENV=local
