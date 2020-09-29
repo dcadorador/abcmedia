@@ -1,0 +1,89 @@
+<template>
+    <div class="vertical-align-wrap">
+        <div class="vertical-align-middle">
+            <div class="auth-box ">
+                <div class="left">
+                    <div class="content text-left">
+                        <div class="header">
+                            <p class="lead">Login to your account</p>
+                        </div>
+                        <form method="POST" @submit.prevent="authentication">
+                            <div class="form-group text-left">
+                                <label for="email" class="control-label sr-only">E-mail Address</label>
+                                <input name="email" required type="email" class="form-control" v-model="login.email" placeholder="Email">
+                                    <span v-if="errors.length > 0" class="invalid-feedback">
+                                        <strong>{{ errors }}</strong>
+                                    </span>
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="password" class="control-label sr-only">Password</label>
+                                <input name="password" required class="form-control" v-model="login.password" type="password" placeholder="Password">
+                            </div>
+                            <div class="form-group clearfix">
+                                <label class="fancy-checkbox element-left text-left">
+                                    <a href="/register">Register</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-0lg btn-block">
+                                Login
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="overlay"></div>
+                    <div class="content text not-mid">
+                        <h1 class="heading text-center">Welcome to Sample Application</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import { mapGetters } from 'vuex';
+    import { mapActions } from 'vuex';
+    export default {
+
+        data() {
+            return {
+                errors: '',
+                checked: false,
+                login: {
+                    email: '',
+                    password: ''
+                }
+            }
+        },
+
+        computed: {
+
+        },
+
+        methods: {
+
+            authentication() {
+
+                let data = {
+                    email: this.login.email,
+                    password: this.login.password
+                }
+
+                this.$store.dispatch('login', data)
+                    .then((data) => {
+                        console.log('success');
+                        this.$router.push('/')
+                    })
+                    .catch(err => {
+                        if(err == 'Request failed with status code 401') {
+                            this.errors = 'Invalid username/password'
+                        }
+                        //this.errors.push('');
+                    });
+            },
+
+        }
+    }
+</script>
